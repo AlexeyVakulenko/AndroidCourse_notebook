@@ -1,11 +1,13 @@
 package com.example.vakulenko.notebook.activity;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import com.example.vakulenko.notebook.CreateContract;
 import com.example.vakulenko.notebook.R;
-import com.example.vakulenko.notebook.pretenders.CreatePresenter;
+import com.example.vakulenko.notebook.presenters.CreatePresenter;
 
 public class CreateActivity extends Activity implements CreateContract.View {
 
@@ -30,5 +32,9 @@ public class CreateActivity extends Activity implements CreateContract.View {
     protected void onPause() {
         super.onPause();
         presenter.createNote(editText.getText().toString());
+    }
+
+    public static Intent createIntent(Context context) {
+        return new Intent(context, CreateActivity.class);
     }
 }

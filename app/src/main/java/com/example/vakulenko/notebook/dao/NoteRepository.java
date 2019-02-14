@@ -41,4 +41,9 @@ public class NoteRepository implements com.example.vakulenko.notebook.NoteReposi
     public void deleteNote(int id) {
         dao.delete(dao.getNoteById(id));
     }
+
+    @Override
+    public void updateNote(int id, String text) {
+        dao.update(id, text);
+    }
 }

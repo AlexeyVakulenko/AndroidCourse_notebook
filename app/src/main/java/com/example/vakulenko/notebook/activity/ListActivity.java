@@ -1,15 +1,15 @@
 package com.example.vakulenko.notebook.activity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Button;
 
 import com.example.vakulenko.notebook.ListContract;
 import com.example.vakulenko.notebook.R;
 import com.example.vakulenko.notebook.adapters.NoteAdapter;
-import com.example.vakulenko.notebook.pretenders.ListPresenter;
+import com.example.vakulenko.notebook.presenters.ListPresenter;
 
 
 public class ListActivity extends Activity implements ListContract.View {
@@ -46,7 +46,12 @@ public class ListActivity extends Activity implements ListContract.View {
     }
 
     @Override
+    public void toUpdateActivity(View view, int id) {
+        startActivity(UpdateActivity.createIntent(this, id));
+    }
+
+    @Override
     public void toCreateActivity() {
-        startActivity(new Intent(this, CreateActivity.class));
+        startActivity(CreateActivity.createIntent(this));
     }
 }

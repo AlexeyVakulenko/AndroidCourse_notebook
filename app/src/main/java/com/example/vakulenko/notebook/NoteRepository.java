@@ -9,4 +9,5 @@ public interface NoteRepository {
     List<Note> listNotes();
     Note getNote(int id);
     void deleteNote(int id);
+    void updateNote(int id, String text);
 }

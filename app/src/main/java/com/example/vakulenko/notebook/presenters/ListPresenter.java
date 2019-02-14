@@ -1,5 +1,6 @@
-package com.example.vakulenko.notebook.pretenders;
+package com.example.vakulenko.notebook.presenters;
 
+import android.view.View;
 import com.example.vakulenko.notebook.ListContract;
 import com.example.vakulenko.notebook.dao.NoteRepository;
 import com.example.vakulenko.notebook.entitys.Note;
@@ -28,17 +29,22 @@ public class ListPresenter implements ListContract.Presenter {
     }
 
     @Override
-    public String getNoteTextForPos(int pos) {
+    public Note getNoteForPos(int pos) {
         List<Note> notes = repository.listNotes();
         Note note = null;
         if (!notes.isEmpty()) {
             note = repository.listNotes().get(notes.size() - 1 - pos);
         }
-        return note != null ? note.text : null;
+        return note;
     }
 
     @Override
     public int getNotesSize() {
         return repository.listNotes().size();
+    }
+
+    @Override
+    public void toUpdateActivity(View v, int id) {
+        view.toUpdateActivity(v, id);
     }
 }

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.vakulenko.notebook.ListContract;
 import com.example.vakulenko.notebook.R;
+import com.example.vakulenko.notebook.entitys.Note;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.Holder> {
 
@@ -28,11 +29,11 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.Holder> {
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int pos) {
-        String text = presenter.getNoteTextForPos(pos);
-        if (text == null || text.isEmpty()) {
-            text = "NOT_FOUND";
+        Note note = presenter.getNoteForPos(pos);
+        if (note == null) {
+            holder.bind(note.id, "NOT_FOUND");
         }
-        holder.bind(text);
+        holder.bind(note.id, note.text);
     }
 
     @Override
@@ -40,16 +41,22 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.Holder> {
         return presenter.getNotesSize();
     }
 
-    public static class Holder extends RecyclerView.ViewHolder {
+    public class Holder extends RecyclerView.ViewHolder {
 
         private TextView textView;
+
+        private int id;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.text_view);
+            itemView.setOnClickListener(v -> {
+                presenter.toUpdateActivity(v, id);
+            });
         }
 
-        public void bind(String text) {
+        public void bind(int id, String text) {
+            Holder.this.id = id;
             textView.setText(text);
         }
     }

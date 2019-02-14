@@ -1,4 +1,4 @@
-package com.example.vakulenko.notebook.pretenders;
+package com.example.vakulenko.notebook.presenters;
 
 import com.example.vakulenko.notebook.CreateContract;
 import com.example.vakulenko.notebook.NoteRepository;
