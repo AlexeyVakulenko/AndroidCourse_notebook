@@ -1,9 +1,10 @@
-package com.example.vakulenko.notebook.presenters;
+package com.example.vakulenko.notebook.presenter;
 
 import android.view.View;
-import com.example.vakulenko.notebook.ListContract;
+import com.example.vakulenko.notebook.contract.ListContract;
 import com.example.vakulenko.notebook.dao.NoteRepository;
-import com.example.vakulenko.notebook.entitys.Note;
+import com.example.vakulenko.notebook.dao.NoteRepositoryImpl;
+import com.example.vakulenko.notebook.dao.entitys.Note;
 
 import java.util.List;
 
@@ -11,11 +12,11 @@ public class ListPresenter implements ListContract.Presenter {
 
     private ListContract.View view;
 
-    private com.example.vakulenko.notebook.NoteRepository repository;
+    private NoteRepository repository;
 
     public ListPresenter(ListContract.View view) {
         this.view = view;
-        repository = NoteRepository.getInstance();
+        repository = NoteRepositoryImpl.getInstance();
     }
 
     @Override

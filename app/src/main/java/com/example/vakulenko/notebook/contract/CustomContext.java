@@ -1,4 +1,4 @@
-package com.example.vakulenko.notebook;
+package com.example.vakulenko.notebook.contract;
 
 import android.app.Application;
 import android.arch.persistence.room.Room;

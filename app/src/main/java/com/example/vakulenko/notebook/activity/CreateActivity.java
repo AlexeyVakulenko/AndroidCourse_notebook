@@ -5,9 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
-import com.example.vakulenko.notebook.CreateContract;
+import com.example.vakulenko.notebook.contract.CreateContract;
 import com.example.vakulenko.notebook.R;
-import com.example.vakulenko.notebook.presenters.CreatePresenter;
+import com.example.vakulenko.notebook.presenter.CreatePresenter;
 
 public class CreateActivity extends Activity implements CreateContract.View {
 

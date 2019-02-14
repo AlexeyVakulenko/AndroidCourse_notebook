@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import com.example.vakulenko.notebook.R;
-import com.example.vakulenko.notebook.UpdateContract;
-import com.example.vakulenko.notebook.dao.NoteRepository;
-import com.example.vakulenko.notebook.presenters.UpdatePresenter;
+import com.example.vakulenko.notebook.contract.UpdateContract;
+import com.example.vakulenko.notebook.dao.NoteRepositoryImpl;
+import com.example.vakulenko.notebook.presenter.UpdatePresenter;
 
 public class UpdateActivity extends Activity implements UpdateContract.View {
 
@@ -38,7 +38,7 @@ public class UpdateActivity extends Activity implements UpdateContract.View {
     @Override
     protected void onPause() {
         super.onPause();
-        NoteRepository.getInstance().updateNote(id, editText.getText().toString());
+        NoteRepositoryImpl.getInstance().updateNote(id, editText.getText().toString());
     }
 
     public static Intent createIntent(Context context, int id) {

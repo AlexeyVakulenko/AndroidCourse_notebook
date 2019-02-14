@@ -1,7 +1,8 @@
-package com.example.vakulenko.notebook.presenters;
+package com.example.vakulenko.notebook.presenter;
 
-import com.example.vakulenko.notebook.NoteRepository;
-import com.example.vakulenko.notebook.UpdateContract;
+import com.example.vakulenko.notebook.dao.NoteRepository;
+import com.example.vakulenko.notebook.contract.UpdateContract;
+import com.example.vakulenko.notebook.dao.NoteRepositoryImpl;
 
 public class UpdatePresenter implements UpdateContract.Presenter {
 
@@ -11,7 +12,7 @@ public class UpdatePresenter implements UpdateContract.Presenter {
 
     public UpdatePresenter(UpdateContract.View view) {
         this.view = view;
-        repository = com.example.vakulenko.notebook.dao.NoteRepository.getInstance();
+        repository = NoteRepositoryImpl.getInstance();
     }
 
     @Override

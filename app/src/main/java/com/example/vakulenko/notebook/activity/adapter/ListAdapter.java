@@ -1,4 +1,4 @@
-package com.example.vakulenko.notebook.adapters;
+package com.example.vakulenko.notebook.activity.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,15 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.vakulenko.notebook.ListContract;
+import com.example.vakulenko.notebook.contract.ListContract;
 import com.example.vakulenko.notebook.R;
-import com.example.vakulenko.notebook.entitys.Note;
+import com.example.vakulenko.notebook.dao.entitys.Note;
 
-public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.Holder> {
+public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
 
     private ListContract.Presenter presenter;
 
-    public NoteAdapter(Context context, ListContract.Presenter presenter) {
+    public ListAdapter(Context context, ListContract.Presenter presenter) {
         this.presenter = presenter;
     }
 

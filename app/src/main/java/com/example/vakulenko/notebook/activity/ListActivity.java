@@ -6,10 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.vakulenko.notebook.ListContract;
+import com.example.vakulenko.notebook.contract.ListContract;
 import com.example.vakulenko.notebook.R;
-import com.example.vakulenko.notebook.adapters.NoteAdapter;
-import com.example.vakulenko.notebook.presenters.ListPresenter;
+import com.example.vakulenko.notebook.activity.adapter.ListAdapter;
+import com.example.vakulenko.notebook.presenter.ListPresenter;
 
 
 public class ListActivity extends Activity implements ListContract.View {
@@ -20,7 +20,7 @@ public class ListActivity extends Activity implements ListContract.View {
 
     private RecyclerView recyclerView;
 
-    private NoteAdapter noteAdapter;
+    private ListAdapter listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +30,14 @@ public class ListActivity extends Activity implements ListContract.View {
         createButton = findViewById(R.id.create_button);
         createButton.setOnClickListener(v -> presenter.createNote());
         recyclerView = findViewById(R.id.recycler_view);
-        noteAdapter = new NoteAdapter(this, presenter);
-        recyclerView.setAdapter(noteAdapter);
+        listAdapter = new ListAdapter(this, presenter);
+        recyclerView.setAdapter(listAdapter);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        noteAdapter.notifyDataSetChanged();
+        listAdapter.notifyDataSetChanged();
     }
 
     @Override

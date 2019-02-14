@@ -1,9 +1,6 @@
-package com.example.vakulenko.notebook;
+package com.example.vakulenko.notebook.contract;
 
-import android.view.View;
-import com.example.vakulenko.notebook.entitys.Note;
-
-import java.util.List;
+import com.example.vakulenko.notebook.dao.entitys.Note;
 
 public interface ListContract {
     interface View {

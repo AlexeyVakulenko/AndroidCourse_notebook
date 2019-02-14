@@ -1,8 +1,9 @@
-package com.example.vakulenko.notebook.presenters;
+package com.example.vakulenko.notebook.presenter;
 
-import com.example.vakulenko.notebook.CreateContract;
-import com.example.vakulenko.notebook.NoteRepository;
-import com.example.vakulenko.notebook.entitys.Note;
+import com.example.vakulenko.notebook.contract.CreateContract;
+import com.example.vakulenko.notebook.dao.NoteRepository;
+import com.example.vakulenko.notebook.dao.NoteRepositoryImpl;
+import com.example.vakulenko.notebook.dao.entitys.Note;
 
 import java.util.Arrays;
 
@@ -14,7 +15,7 @@ public class CreatePresenter implements CreateContract.Presenter {
 
     public CreatePresenter(CreateContract.View view) {
         this.view = view;
-        repository = com.example.vakulenko.notebook.dao.NoteRepository.getInstance();
+        repository = NoteRepositoryImpl.getInstance();
     }
 
     @Override

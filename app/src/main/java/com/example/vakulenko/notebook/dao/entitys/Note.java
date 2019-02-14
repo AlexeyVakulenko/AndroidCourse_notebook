@@ -1,4 +1,4 @@
-package com.example.vakulenko.notebook.entitys;
+package com.example.vakulenko.notebook.dao.entitys;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;

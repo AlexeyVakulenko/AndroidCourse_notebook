@@ -1,7 +1,7 @@
 package com.example.vakulenko.notebook.dao;
 
 import android.arch.persistence.room.*;
-import com.example.vakulenko.notebook.entitys.Note;
+import com.example.vakulenko.notebook.dao.entitys.Note;
 
 import java.util.List;
 
