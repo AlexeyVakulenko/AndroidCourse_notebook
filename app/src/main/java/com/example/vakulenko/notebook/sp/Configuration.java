@@ -1,6 +1,7 @@
 package com.example.vakulenko.notebook.sp;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import com.example.vakulenko.notebook.contract.CustomContext;
 
 public class Configuration {
@@ -17,12 +18,12 @@ public class Configuration {
 
     public enum ConfigurationName {
         TEXT_SIZE("18"),
-        TEXT_COLOR("19");
+        TEXT_COLOR("#FFFFFF");
 
         private String defaultValue;
 
         ConfigurationName(String defaultValue) {
-            this.defaultValue = defaultValue;
+            this.defaultValue = String.valueOf(defaultValue);
         }
 
         public String getDefaultValue() {

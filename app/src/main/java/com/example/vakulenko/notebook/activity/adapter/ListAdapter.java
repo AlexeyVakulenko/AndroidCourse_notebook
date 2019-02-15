@@ -43,6 +43,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
 
     public class Holder extends RecyclerView.ViewHolder {
 
+        public static final int MAX_LENGTH = 15;
+
         private TextView textView;
 
         private int id;
@@ -57,7 +59,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
 
         public void bind(int id, String text) {
             Holder.this.id = id;
-            textView.setText(text);
+            textView.setText(text.length() <= MAX_LENGTH ? text : text.substring(0, MAX_LENGTH));
         }
     }
 }

@@ -15,19 +15,22 @@ public class ConfigActivity extends Activity implements ConfigContract.View {
 
     private EditText textSizeEditText;
 
+    private EditText textColorEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config);
         presenter = new ConfigPresenter(this);
         textSizeEditText = findViewById(R.id.text_size_edit_text);
+        textColorEditText = findViewById(R.id.text_color_edit_text);
     }
-
 
     @Override
     protected void onPause() {
         super.onPause();
-        presenter.changeTextSize(Integer.parseInt(textSizeEditText.getText().toString()));
+        presenter.changeTextSize(textSizeEditText.getText().toString());
+        presenter.changeTextColor(textColorEditText.getText().toString());
     }
 
     public static Intent createIntent(Context context) {

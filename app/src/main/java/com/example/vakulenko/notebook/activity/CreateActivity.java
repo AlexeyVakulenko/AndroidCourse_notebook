@@ -3,6 +3,7 @@ package com.example.vakulenko.notebook.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.EditText;
 import com.example.vakulenko.notebook.contract.CreateContract;
@@ -26,6 +27,8 @@ public class CreateActivity extends Activity implements CreateContract.View {
     @Override
     protected void onResume() {
         super.onResume();
+        presenter.setTextSize();
+        presenter.setTextColor();
     }
 
     @Override
@@ -37,4 +40,16 @@ public class CreateActivity extends Activity implements CreateContract.View {
     public static Intent createIntent(Context context) {
         return new Intent(context, CreateActivity.class);
     }
+
+    @Override
+    public void setTextSize(int i) {
+        editText.setTextSize(i);
+    }
+
+    @Override
+    public void setTextColor(String color) {
+        //TODO
+        editText.setTextColor(Color.parseColor(color));
+    }
 }
+

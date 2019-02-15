@@ -3,8 +3,8 @@ package com.example.vakulenko.notebook.contract;
 public interface ConfigContract {
 
     interface Presenter {
-        void changeTextSize(int size);
-        void changeTextColor(int color);
+        void changeTextSize(String size);
+        void changeTextColor(String color);
     }
 
     interface View {
