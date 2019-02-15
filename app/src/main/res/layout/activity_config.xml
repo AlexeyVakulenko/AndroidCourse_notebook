@@ -7,4 +7,10 @@
         android:layout_height="match_parent"
         tools:context=".activity.ConfigActivity">
 
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/text_size_edit_text"/>
 </android.support.constraint.ConstraintLayout>

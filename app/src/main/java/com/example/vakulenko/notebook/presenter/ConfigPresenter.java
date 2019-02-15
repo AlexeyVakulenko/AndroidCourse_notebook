@@ -1,6 +1,5 @@
 package com.example.vakulenko.notebook.presenter;
 
-import android.content.SharedPreferences;
 import com.example.vakulenko.notebook.contract.ConfigContract;
 import com.example.vakulenko.notebook.sp.Configuration;
 
@@ -10,7 +9,6 @@ public class ConfigPresenter implements ConfigContract.Presenter {
 
     public ConfigPresenter(ConfigContract.View view) {
         this.view = view;
-
     }
 
     @Override

@@ -18,6 +18,8 @@ public class ListActivity extends Activity implements ListContract.View {
 
     private Button createButton;
 
+    private Button configButton;
+
     private RecyclerView recyclerView;
 
     private ListAdapter listAdapter;
@@ -29,6 +31,8 @@ public class ListActivity extends Activity implements ListContract.View {
         presenter = new ListPresenter(this);
         createButton = findViewById(R.id.create_button);
         createButton.setOnClickListener(v -> presenter.createNote());
+        configButton = findViewById(R.id.config_button);
+        configButton.setOnClickListener(v -> presenter.toConfigActivity());
         recyclerView = findViewById(R.id.recycler_view);
         listAdapter = new ListAdapter(this, presenter);
         recyclerView.setAdapter(listAdapter);
@@ -53,5 +57,10 @@ public class ListActivity extends Activity implements ListContract.View {
     @Override
     public void toCreateActivity() {
         startActivity(CreateActivity.createIntent(this));
+    }
+
+    @Override
+    public void toConfigActivity() {
+        startActivity(ConfigActivity.createIntent(this));
     }
 }

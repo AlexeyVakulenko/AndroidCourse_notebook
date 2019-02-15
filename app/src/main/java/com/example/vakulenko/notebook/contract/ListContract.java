@@ -7,6 +7,7 @@ public interface ListContract {
         void createNote();
         void toCreateActivity();
         void toUpdateActivity(android.view.View v, int id);
+        void toConfigActivity();
     }
 
     interface Presenter {
@@ -14,8 +15,8 @@ public interface ListContract {
         void toCreateActivity();
         Note getNoteForPos(int id);
         int getNotesSize();
-
         void toUpdateActivity(android.view.View v, int id);
+        void toConfigActivity();
     }
 }
 

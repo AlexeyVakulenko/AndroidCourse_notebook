@@ -48,4 +48,9 @@ public class ListPresenter implements ListContract.Presenter {
     public void toUpdateActivity(View v, int id) {
         view.toUpdateActivity(v, id);
     }
+
+    @Override
+    public void toConfigActivity() {
+        view.toConfigActivity();
+    }
 }
