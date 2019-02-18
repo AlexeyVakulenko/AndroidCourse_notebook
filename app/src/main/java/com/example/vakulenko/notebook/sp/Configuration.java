@@ -17,7 +17,7 @@ public class Configuration {
 
     public enum ConfigurationName {
         TEXT_SIZE("18"),
-        TEXT_COLOR("#FFFFFF");
+        TEXT_COLOR("#000000");
 
         private String defaultValue;
 

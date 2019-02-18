@@ -24,7 +24,6 @@ public class ConfigActivity extends Activity implements ConfigContract.View {
         presenter = new ConfigPresenter(this);
         textSizeEditText = findViewById(R.id.text_size_edit_text);
         textColorEditText = findViewById(R.id.text_color_edit_text);
-
     }
 
     @Override
@@ -41,11 +40,6 @@ public class ConfigActivity extends Activity implements ConfigContract.View {
         presenter.changeTextColor(textColorEditText.getText().toString());
     }
 
-    public static Intent createIntent(Context context) {
-        Intent intent = new Intent(context, ConfigActivity.class);
-        return intent;
-    }
-
     @Override
     public void setCurrentTextSize(String textSize) {
         textSizeEditText.setText(textSize);
@@ -54,5 +48,10 @@ public class ConfigActivity extends Activity implements ConfigContract.View {
     @Override
     public void setCurrentTextColor(String textColor) {
         textColorEditText.setText(textColor);
+    }
+
+    public static Intent createIntent(Context context) {
+        Intent intent = new Intent(context, ConfigActivity.class);
+        return intent;
     }
 }

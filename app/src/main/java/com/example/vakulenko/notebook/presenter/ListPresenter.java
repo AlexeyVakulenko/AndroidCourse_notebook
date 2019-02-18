@@ -1,10 +1,12 @@
 package com.example.vakulenko.notebook.presenter;
 
 import android.view.View;
+
 import com.example.vakulenko.notebook.contract.ListContract;
 import com.example.vakulenko.notebook.dao.NoteRepository;
 import com.example.vakulenko.notebook.dao.NoteRepositoryImpl;
 import com.example.vakulenko.notebook.dao.entitys.Note;
+import com.example.vakulenko.notebook.sp.Configuration;
 
 import java.util.List;
 
@@ -53,4 +55,5 @@ public class ListPresenter implements ListContract.Presenter {
     public void toConfigActivity() {
         view.toConfigActivity();
     }
+
 }

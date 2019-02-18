@@ -5,12 +5,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
+
 import com.example.vakulenko.notebook.contract.CreateContract;
 import com.example.vakulenko.notebook.R;
 import com.example.vakulenko.notebook.presenter.CreatePresenter;
 
 public class CreateActivity extends Activity implements CreateContract.View {
+
+    public static final String TAG = "CREATE_ACTIVITY";
 
     private CreateContract.Presenter presenter;
 
@@ -37,10 +41,6 @@ public class CreateActivity extends Activity implements CreateContract.View {
         presenter.createNote(editText.getText().toString());
     }
 
-    public static Intent createIntent(Context context) {
-        return new Intent(context, CreateActivity.class);
-    }
-
     @Override
     public void setTextSize(int i) {
         editText.setTextSize(i);
@@ -48,8 +48,15 @@ public class CreateActivity extends Activity implements CreateContract.View {
 
     @Override
     public void setTextColor(String color) {
-        //TODO
-        editText.setTextColor(Color.parseColor(color));
+        try {
+            editText.setTextColor(Color.parseColor(color));
+        } catch (Exception e) {
+            Log.d(TAG, "Не корректно задан цвет. " + color);
+        }
+    }
+
+    public static Intent createIntent(Context context) {
+        return new Intent(context, CreateActivity.class);
     }
 }
 

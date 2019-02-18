@@ -36,7 +36,6 @@ public class CreatePresenter implements CreateContract.Presenter {
     @Override
     public void setTextColor() {
         String color = Configuration.getValue(Configuration.ConfigurationName.TEXT_COLOR);
-        //TODO
         view.setTextColor(color);
     }
 }
