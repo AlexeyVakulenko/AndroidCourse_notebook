@@ -25,4 +25,14 @@ public class ConfigPresenter implements ConfigContract.Presenter {
             Configuration.setValue(Configuration.ConfigurationName.TEXT_COLOR, color);
         }
     }
+
+    @Override
+    public void setCurrentTextSize() {
+        view.setCurrentTextSize(Configuration.getValue(Configuration.ConfigurationName.TEXT_SIZE));
+    }
+
+    @Override
+    public void setCurrentTextColor() {
+        view.setCurrentTextColor(Configuration.getValue(Configuration.ConfigurationName.TEXT_COLOR));
+    }
 }

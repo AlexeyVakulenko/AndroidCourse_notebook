@@ -19,4 +19,9 @@ public class UpdatePresenter implements UpdateContract.Presenter {
     public String getTextForId(int id) {
         return repository.getNote(id).text;
     }
+
+    @Override
+    public void updateNote(int id, String text) {
+        NoteRepositoryImpl.getInstance().updateNote(id, text);
+    }
 }

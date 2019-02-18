@@ -1,7 +1,6 @@
 package com.example.vakulenko.notebook.sp;
 
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import com.example.vakulenko.notebook.contract.CustomContext;
 
 public class Configuration {

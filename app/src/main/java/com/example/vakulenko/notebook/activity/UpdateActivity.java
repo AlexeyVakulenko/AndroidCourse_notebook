@@ -38,7 +38,7 @@ public class UpdateActivity extends Activity implements UpdateContract.View {
     @Override
     protected void onPause() {
         super.onPause();
-        NoteRepositoryImpl.getInstance().updateNote(id, editText.getText().toString());
+        presenter.updateNote(id, editText.getText().toString());
     }
 
     public static Intent createIntent(Context context, int id) {
